@@ -1,5 +1,6 @@
-#HRA=House Rent Allowance
-#Dearness Allowance
+#ID - 19201103123
+#Intake-43
+#Section-2
 salary=int(input('Enter Salary: '))
 if salary<=10000:
     HRA=salary*0.2
