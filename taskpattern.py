@@ -1,5 +1,7 @@
-for i in range(1,6):
-    for j in range(i,i+5):
-        print(j,end="")
-    print()
+def pattern(x,y):
+    for i in range(x,y):
+        for j in range(i,i+(y-1)):
+            print(j,end="")
+        print()
+pattern(1,6)
 

@@ -3,6 +3,6 @@ def fib(n):
         return n
     else:
         return(fib(n-1) + fib(n-2))
-nterms = 10
-for i in range(nterms):
+limit=int(input('Enter Limit: '))
+for i in range(limit):
     print(fib(i),end=' ')
