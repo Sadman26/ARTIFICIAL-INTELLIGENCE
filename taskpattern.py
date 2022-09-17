@@ -1,7 +1,6 @@
-def pattern(x,y):
+def pattern_make(x,y):
     for i in range(x,y):
-        for j in range(i,i+(y-1)):
-            print(j,end="")
+        for j in range(i,i+5):
+            print(j,end='')
         print()
-pattern(1,6)
-
+pattern_make(1,6)
