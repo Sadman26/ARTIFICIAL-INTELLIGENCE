@@ -22,3 +22,12 @@ elif unit>=251:
     print('Bill=',bill)
     x=bill*0.20
     print('Surcharge=',x)
+#pseducode for the above program
+#1. take input from user
+#2. check the condition
+#3. if unit<=50 then bill=unit*0.50
+#4. if unit>=51 and unit<=150 then bill=25+(unit-50)*0.75
+#5. if unit>=151 and unit<=250 then bill=100+(unit-150)*1.20
+#6. if unit>=251 then bill=220+(unit-250)*1.50
+#7. print the bill
+#8. print the surcharge
