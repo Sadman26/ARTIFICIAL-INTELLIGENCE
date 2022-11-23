@@ -1,44 +1,43 @@
 import numpy as np
-f=np.array(
+Input = np.array(
+    [[0, 0],
+    [0, 1],
+    [1, 0],
+    [1, 1]])
+Label = np.array(
     [
-        [0,0],
-        [0,1],
-        [1,0],
-        [1,1]
-    ]
+    0,
+    0,
+    0, 
+    1]
     )
-    
-labels=np.array([0,0,0,1])
-
-w=[1,0.5]
-theta=0.5
-learning_rate=0.1
-epoch=5
-
-
-for j in range(0,epoch):
-    print("epoch",j)
-    for i in range(0,f.shape[0]):
-        actual=labels[i]
-        instance=f[i]
-        
-        x0=instance[0]
-        x1=instance[1]
-        
-        net=w[0]*x0+w[1]*x1-theta
-        
-        if net>0:
-            y=1
+Weight = [1, 0.5]
+Bias = 2.5
+LearningRate = 0.1
+epoch = 9
+for j in range(0, epoch):
+    print("Epoch: ", j)
+    count = 0
+    for i in range(0, Input.shape[0]):
+        T = Label[i]
+        instance = Input[i]
+        x0 = instance[0]
+        x1 = instance[1]
+        net = (Weight[0]*x0)+(Weight[1]*x1)-Bias
+        if net > 0:
+            y = 1
         else:
-            y=0
-            
-        delta=actual-y
-        
-        if(delta!=0):
-            w[0]=w[0]+learning_rate*delta*x0
-            w[1]=w[1]+learning_rate*delta*x1
-            theta=theta+(-1)*delta*learning_rate
-            
-        print("Calculated Value:",y,"actual value",delta)
-   
+            y = 0
+        delta = T-y
+        if delta != 0:
+            Weight[0] = Weight[0]+(LearningRate*delta*x0)
+            Weight[1] = Weight[1]+(LearningRate*delta*x1)
+            Bias = Bias+(LearningRate*delta*(-1))
+        else:
+            count = count+1
+        print("Calculated Value:", y, "actual value", delta)
+    if count == Input.shape[0]:
+        break
     print(".............")
+
+
